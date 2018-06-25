@@ -1,0 +1,101 @@
+{
+   "version": "eosio::abi/1.0",
+   "types": [{
+      "new_type_name": "account_name",
+      "type": "name"
+   }],
+  "structs": [{
+      "name": "estransfer",
+      "base": "",
+      "fields": [
+        {"name":"from", "type":"account_name"},
+        {"name":"to", "type":"account_name"},
+        {"name":"agent", "type":"account_name"},
+        {"name":"quantity", "type":"asset"}
+      ]
+    },{
+      "name": "esrelease",
+      "base": "",
+      "fields": [
+        {"name":"agent", "type":"account_name"},
+        {"name":"to", "type":"account_name"}
+        {"name":"quantity", "type":"asset"}
+      ]
+    },{
+     "name": "escreate",
+     "base": "",
+     "fields": [
+        {"name":"issuer", "type":"account_name"},
+        {"name":"maximum_supply", "type":"asset"}
+     ]
+  },{
+     "name": "esissue",
+     "base": "",
+     "fields": [
+        {"name":"to", "type":"account_name"},
+        {"name":"quantity", "type":"asset"}
+     ]
+  },{
+      "name": "eshello",
+      "base": "",
+      "fields": [{
+          "name": "user",
+          "type": "account_name"
+        }
+      ]
+    },{
+      "name": "account",
+      "base": "",
+      "fields": [
+        {"name":"balance", "type":"asset"}
+      ]
+    },{
+      "name": "currency_stats",
+      "base": "",
+      "fields": [
+        {"name":"supply", "type":"asset"},
+        {"name":"max_supply", "type":"asset"},
+        {"name":"issuer", "type":"account_name"}
+      ]
+    }
+  ],
+  "actions": [{
+      "name": "estransfer",
+      "type": "estransfer",
+      "ricardian_contract": ""
+    },{
+      "name": "esrelease",
+      "type": "esrelease",
+      "ricardian_contract": ""
+    },{
+      "name": "esissue",
+      "type": "esissue",
+      "ricardian_contract": ""
+    }, {
+      "name": "escreate",
+      "type": "escreate",
+      "ricardian_contract": ""
+    },{
+      "name": "eshello",
+      "type": "eshello",
+      "ricardian_contract": ""
+    }
+
+  ],
+  "tables": [{
+      "name": "accounts",
+      "type": "account",
+      "index_type": "i64",
+      "key_names" : ["currency"],
+      "key_types" : ["uint64"]
+    },{
+      "name": "stat",
+      "type": "currency_stats",
+      "index_type": "i64",
+      "key_names" : ["currency"],
+      "key_types" : ["uint64"]
+    }
+  ],
+  "ricardian_clauses": [],
+  "abi_extensions": []
+}
