@@ -35,6 +35,9 @@ add_subdirectory(tic_tac_toe)
 add_subdirectory(payloadless)
 add_subdirectory(escrow)
 add_subdirectory(deferred)
+add_subdirectory(codum.token)
+add_subdirectory(base)
+add_subdirectory(child)
 
 
 
